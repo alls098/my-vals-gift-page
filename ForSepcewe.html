@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy galentines!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-image: url(https://i.pinimg.com/736x/04/4f/90/044f90ee3389dff57eeeb1cba2f56cc3.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        #content {
+            background:rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .comment-input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Happy Galentines my loves!💗💗</h1>
+        <p>Dear my Beloved Sepcewe,</p>
+        <p>Thank you for the wonderful memories and friendship that we've had this past year. Im very lucky to have people like you guys in my life. Thank you! For the beautiful and healthy friendship that we have. Thank you for always being there, understanding me, and accompanying me through my ups and downs. I know that sometimes my words and actions arent the best, but I truly never mean to harm any of you. In fact, I really-really am thankful for you guys, I cherish our moments together, and I appreciate each and every one of your kindness. I really love you guys more than you know, thank you for making my days 20% lighter, 30% slighter, and 50% brighter. I pray so you guys can achieve the best in this world! Thank you for being my dear girls, my dear friends that I can count on and look out for. I love you all so much<3</p>
+        <p>P.S dont forget to leave a comment hehe! ILY ALL</p>
+        <img src="https://media-hosting.imagekit.io//5daffa00f4594512/f9793bb3-0d03-47c2-9fc7-ddc0a48c75aa.jpg?Expires=1834067296&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=r7jTsXuszJl4mTHB0vCu13hcXA5XUNs-ba6qG-clYYVcGaOePJ2tBMf4oNRnWed6nwZTrD709YKEmp1h1X2UrLAN9tmFY~mgDRPioBUMFldo6NV7xt1Jw5ceqGxy29L4eUf6kZqFeTHU5K4hLeM2u4-MWhqyk~C6LJUbzwBQoYXhJBZQK-pFTvPJiJRigvlwF3khLJ6p9pYnvATn~IXm8fBqwRMIkSx9Jjc8QxYUim9VjNtLI3ubtqF3QED-jNuvUMNScB-Aqf3LkCuyDIIIXPiHyog2gh2AGl-42l4JDjQma2MIs5X-gLLT32DUwDfDp4SszxClHZkViYQ0aLIP6A__" alt="f9793bb3-0d03-47c2-9fc7-ddc0a48c75aa.jpg" width="300px">
+        <div class="comments">
+            <h2>Comments</h2>
+            <p>(Enter your name and comment below, then click "Add Comment" to post it.)</p>
+            <div id="commentList"></div>
+            <input type="text" id="nameInput" class="comment-input" placeholder="Your name...">
+            <textarea id="commentInput" class="comment-input" placeholder="Write a comment..."></textarea>
+            <button onclick="addComment()">Add Comment</button>
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            const nameInput = document.getElementById('nameInput');
+            const commentInput = document.getElementById('commentInput');
+            const commentList = document.getElementById('commentList');
+            const nameText = nameInput.value;
+            const commentText = commentInput.value;
+
+            console.log('Name:', nameText);
+            console.log('Comment:', commentText);
+
+            if (commentText.trim() !== '') {
+                const comment = document.createElement('div');
+                comment.className = 'comment';
+                comment.innerHTML = `<strong>${nameText}:</strong> ${commentText}`;
+                commentList.appendChild(comment);
+                nameInput.value = '';
+                commentInput.value = '';
+                console.log('Comment added:', comment);
+            } else {
+                console.log('Comment text is empty');
+            }
+        }
+    </script>
+</body>
+</html>
